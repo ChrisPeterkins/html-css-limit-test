@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a rendering, interaction, or accessibility problem.
+title: "Bug: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping make the native web experiment more resilient.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Firefox 142, Safari 19, Chrome 140…
+    validations:
+      required: true
+  - type: input
+    id: viewport
+    attributes:
+      label: Viewport or device
+      placeholder: 390 × 844, desktop, print preview…
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Project constraint
+      options:
+        - label: My proposed fix can be implemented without JavaScript, packages, external requests, or image assets.
+          required: true

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical field guide to building durable websites from native browser primitives.">
+  <meta name="theme-color" content="#d6ff3f">
+  <title>The Field Guide — NO SCRIPT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="guide-page">
+  <a class="skip-link" href="#guide-main">Skip to content</a>
+  <input class="theme-toggle" type="checkbox" id="theme-toggle" aria-label="Use dark theme">
+
+  <div class="site-shell">
+    <div class="scroll-meter" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="No Script, home"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html#proof">Proof</a>
+        <a href="museum.html">Museum</a>
+        <a href="principles.html" aria-current="page">Field guide</a>
+      </nav>
+      <label class="theme-switch" for="theme-toggle"><span class="switch-track" aria-hidden="true"><span></span></span><span class="switch-label">Invert</span></label>
+    </header>
+
+    <main id="guide-main">
+      <section class="guide-hero" aria-labelledby="guide-title">
+        <p class="eyebrow"><span>I</span> Field notes for the durable web</p>
+        <h1 id="guide-title">Begin with<br>what <em>survives.</em></h1>
+        <p class="lede">A practical operating manual for building less software and more web: portable, inspectable, accessible, and difficult to break.</p>
+        <dl class="guide-meta"><div><dt>Edition</dt><dd>01 / 2026</dd></div><div><dt>Format</dt><dd>Open document</dd></div><div><dt>License</dt><dd>MIT</dd></div></dl>
+      </section>
+
+      <article class="field-guide">
+        <aside class="guide-toc">
+          <strong>Contents</strong>
+          <nav aria-label="On this page">
+            <a href="#rule-one">01 / Meaning first</a>
+            <a href="#rule-two">02 / Native before novel</a>
+            <a href="#rule-three">03 / Progressive by nature</a>
+            <a href="#rule-four">04 / Complexity must pay rent</a>
+            <a href="#checklist">05 / Shipping checklist</a>
+          </nav>
+        </aside>
+
+        <div class="guide-prose">
+          <section id="rule-one">
+            <span class="chapter-number">01</span>
+            <h2>Meaning<br><em>comes first.</em></h2>
+            <p class="chapter-lead">HTML is not a delivery envelope for components. It is a vocabulary for describing what a page means.</p>
+            <p>A heading is a heading before it is 96 pixels tall. A button is a button before it has a gradient. When the structure is honest, browsers, search engines, assistive technology, reader modes, print engines, and tools can all participate.</p>
+            <blockquote>Design the document before decorating the viewport.</blockquote>
+            <div class="comparison" aria-label="Comparison of fragile and durable markup">
+              <div><span>FRAGILE</span><code>&lt;div onclick="go()"&gt;Continue&lt;/div&gt;</code></div>
+              <div><span>DURABLE</span><code>&lt;a href="next.html"&gt;Continue&lt;/a&gt;</code></div>
+            </div>
+          </section>
+
+          <section id="rule-two">
+            <span class="chapter-number">02</span>
+            <h2>Native<br><em>before novel.</em></h2>
+            <p class="chapter-lead">The browser ships with decades of interaction design hidden behind ordinary-looking elements.</p>
+            <p>Start with links, buttons, forms, disclosure widgets, popovers, anchors, and scrolling. These primitives understand keyboards, touch, focus, history, validation, and user preferences. Custom behavior should begin where their capabilities genuinely end.</p>
+            <details class="field-note" open><summary>Field note 02-A</summary><p>If an element navigates, use a link. If it changes the current state, use a button. Styling can make either look however it needs to look.</p></details>
+          </section>
+
+          <section id="rule-three">
+            <span class="chapter-number">03</span>
+            <h2>Progressive<br><em>by nature.</em></h2>
+            <p class="chapter-lead">A website does not need to appear identical everywhere to remain coherent everywhere.</p>
+            <p>Ship a strong baseline. Layer container queries, scroll timelines, anchor positioning, blend modes, and view transitions inside feature queries. Older browsers receive the document. Newer browsers receive the choreography.</p>
+            <pre class="guide-code"><code>@supports (animation-timeline: scroll()) {
+  .progress { animation-timeline: scroll(); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none; }
+}</code></pre>
+          </section>
+
+          <section id="rule-four">
+            <span class="chapter-number">04</span>
+            <h2>Complexity must<br><em>pay rent.</em></h2>
+            <p class="chapter-lead">Every abstraction creates a maintenance obligation. Demand a visible return.</p>
+            <p>Measure complexity in requests, bytes, concepts, failure modes, and the number of specialists required to make a sentence appear. The question is not whether a tool is fashionable. The question is whether the person visiting the page can feel its value.</p>
+            <div class="rent-test"><span>Before adding machinery, ask:</span><strong>What becomes possible for the visitor?</strong></div>
+          </section>
+
+          <section id="checklist" class="shipping-section">
+            <span class="chapter-number">05</span>
+            <h2>The shipping<br><em>checklist.</em></h2>
+            <p class="chapter-lead">Print this page. The checklist becomes a clean, ink-friendly document because CSS is a publishing system too.</p>
+            <form class="ship-list">
+              <label><input type="checkbox"><span></span>The document works without presentation.</label>
+              <label><input type="checkbox"><span></span>Every control is reachable by keyboard.</label>
+              <label><input type="checkbox"><span></span>Focus is never visually ambiguous.</label>
+              <label><input type="checkbox"><span></span>Motion respects user preferences.</label>
+              <label><input type="checkbox"><span></span>The layout responds to content.</label>
+              <label><input type="checkbox"><span></span>Every external request earns its place.</label>
+              <label><input type="checkbox"><span></span>The page prints with dignity.</label>
+              <label><input type="checkbox"><span></span>View source tells the truth.</label>
+            </form>
+          </section>
+        </div>
+      </article>
+
+      <section class="guide-exit section-pad">
+        <p class="eyebrow light"><span>II</span> Return to the evidence</p>
+        <h2>Now inspect<br>the <em>exhibits.</em></h2>
+        <a class="button" href="museum.html">Tour the capability museum <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
+      <p>A document should<br>outlive its tooling.</p>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="museum.html">Museum</a><a href="#guide-main">Top ↑</a></nav>
+      <small>HTML + CSS / NOTHING ELSE</small>
+    </footer>
+  </div>
+</body>
+</html>

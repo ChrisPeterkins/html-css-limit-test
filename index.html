@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A deliberately ambitious website made with nothing but semantic HTML and CSS.">
+  <meta name="theme-color" content="#f1efe7">
+  <title>NO SCRIPT — The web, before the noise.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <input class="theme-toggle" type="checkbox" id="theme-toggle" aria-label="Use dark theme">
+
+  <div class="site-shell">
+    <div class="scroll-meter" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="No Script, home">
+        <span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span>
+        <span>NO SCRIPT</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html#proof" aria-current="page">Proof</a>
+        <a href="museum.html">Museum</a>
+        <a href="principles.html">Field guide</a>
+      </nav>
+
+      <label class="theme-switch" for="theme-toggle">
+        <span class="switch-track" aria-hidden="true"><span></span></span>
+        <span class="switch-label">Invert</span>
+      </label>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> A quiet rebellion</p>
+          <h1 id="hero-title">The web<br>already <em>works.</em></h1>
+          <p class="lede">No framework. No runtime. No dependencies. Just a document, a stylesheet, and the radical idea that the browser is already extraordinarily capable.</p>
+          <div class="hero-actions">
+            <a class="button button-solid" href="#lab">Enter the lab <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="museum.html">Tour the museum <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Abstract CSS-generated kinetic composition">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit orbit-three"></div>
+          <div class="core"><span>0</span><span>kb</span><small>JS</small></div>
+          <span class="coordinate coordinate-a">40.7128° N</span>
+          <span class="coordinate coordinate-b">CSS / 2026</span>
+          <span class="spark spark-a"></span>
+          <span class="spark spark-b"></span>
+          <span class="spark spark-c"></span>
+        </div>
+
+        <div class="hero-index" aria-hidden="true">
+          <span>HTML</span>
+          <span>+</span>
+          <span>CSS</span>
+          <span>=</span>
+          <span>∞</span>
+        </div>
+      </section>
+
+      <section class="marquee" aria-label="Technology list">
+        <div>
+          <span>SEMANTIC HTML</span><i>✦</i><span>CASCADE LAYERS</span><i>✦</i><span>CONTAINER QUERIES</span><i>✦</i><span>ZERO JAVASCRIPT</span><i>✦</i>
+          <span>SEMANTIC HTML</span><i>✦</i><span>CASCADE LAYERS</span><i>✦</i><span>CONTAINER QUERIES</span><i>✦</i><span>ZERO JAVASCRIPT</span><i>✦</i>
+        </div>
+      </section>
+
+      <section class="proof section-pad" id="proof" aria-labelledby="proof-title">
+        <header class="section-heading">
+          <p class="eyebrow"><span>02</span> Native by design</p>
+          <h2 id="proof-title">Less machinery.<br><em>More</em> possibility.</h2>
+          <p>Every interaction on this page is handled by the browser’s own primitives—the durable platform beneath the endless churn.</p>
+        </header>
+
+        <div class="stat-grid">
+          <article class="stat-card stat-featured">
+            <span class="card-number">01</span>
+            <div class="stat-value">0<small>kb</small></div>
+            <h3>JavaScript shipped</h3>
+            <p>No hydration, no bundle, no main-thread tax. The page is interactive before it has finished arriving.</p>
+            <div class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+          <article class="stat-card">
+            <span class="card-number">02</span>
+            <div class="stat-value">4<small>files</small></div>
+            <h3>The whole system</h3>
+            <p>Three meaningful documents. One expressive stylesheet. View source and understand the entire architecture.</p>
+            <div class="file-stack" aria-hidden="true"><span>3 × HTML</span><span>1 × CSS</span></div>
+          </article>
+          <article class="stat-card">
+            <span class="card-number">03</span>
+            <div class="stat-value">∞<small>scale</small></div>
+            <h3>Fluid by default</h3>
+            <p>Intrinsic grids, clamp-based type, logical properties, and containers compose from pocket to cinema.</p>
+            <div class="scale-line" aria-hidden="true"><span></span><i></i><i></i><i></i></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="lab section-pad" id="lab" aria-labelledby="lab-title">
+        <div class="lab-intro">
+          <p class="eyebrow light"><span>03</span> Interaction, natively</p>
+          <h2 id="lab-title">Touch the<br><em>cascade.</em></h2>
+          <p>Combine composition, palette, density, and motion controls. The canvas reacts through selectors, custom properties, transitions, and transforms. No event listeners hiding backstage.</p>
+        </div>
+
+        <fieldset class="css-machine">
+          <legend>CSS composition controls</legend>
+          <input type="radio" name="composition" id="mode-orbit" checked>
+          <input type="radio" name="composition" id="mode-bloom">
+          <input type="radio" name="composition" id="mode-grid">
+          <input type="radio" name="palette" id="palette-acid" checked>
+          <input type="radio" name="palette" id="palette-heat">
+          <input type="radio" name="palette" id="palette-ice">
+          <input type="checkbox" id="dense-mode">
+          <input type="checkbox" id="pause-motion">
+
+          <div class="machine-toolbar">
+            <span>COMPOSITION_03</span>
+            <div class="machine-tabs" role="group" aria-label="Choose a composition">
+              <label for="mode-orbit">Orbit</label>
+              <label for="mode-bloom">Bloom</label>
+              <label for="mode-grid">Grid</label>
+            </div>
+          </div>
+
+          <div class="machine-controls">
+            <div class="control-cluster" role="group" aria-label="Choose a palette">
+              <span>Palette</span>
+              <label for="palette-acid"><i class="swatch swatch-acid"></i>Acid</label>
+              <label for="palette-heat"><i class="swatch swatch-heat"></i>Heat</label>
+              <label for="palette-ice"><i class="swatch swatch-ice"></i>Ice</label>
+            </div>
+            <div class="control-cluster binary-controls">
+              <span>Modifiers</span>
+              <label for="dense-mode">Dense</label>
+              <label for="pause-motion">Pause</label>
+            </div>
+          </div>
+
+          <div class="machine-canvas" aria-live="polite">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="shape shape-a" aria-hidden="true"></div>
+            <div class="shape shape-b" aria-hidden="true"></div>
+            <div class="shape shape-c" aria-hidden="true"></div>
+            <div class="shape shape-d" aria-hidden="true"></div>
+            <p class="mode-name mode-name-orbit">ORBITAL<br>STUDY</p>
+            <p class="mode-name mode-name-bloom">DIGITAL<br>BLOOM</p>
+            <p class="mode-name mode-name-grid">ORDER /<br>CHAOS</p>
+            <span class="machine-note">INPUT → :CHECKED → SIBLING SELECTOR</span>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="manifesto section-pad" id="manifesto" aria-labelledby="manifesto-title">
+        <p class="eyebrow"><span>04</span> A position</p>
+        <div class="manifesto-layout">
+          <h2 id="manifesto-title">The browser is<br>not a <span class="strike">dumb</span><br><em>canvas.</em></h2>
+          <div class="manifesto-copy">
+            <p class="manifesto-lead">We built abstraction upon abstraction until a document needed an operating system to say hello.</p>
+            <p>This is not nostalgia. Modern CSS has variables, logic, state, queries, animation, color systems, layout engines, and math. HTML has disclosure, validation, navigation, media, semantics, and accessibility baked in.</p>
+            <p>The constraint is the point. It forces the design to become clearer, the structure to become honest, and every byte to earn its passage across the wire.</p>
+            <blockquote>“Start with what the platform gives you. You may be surprised how far it goes.”</blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="principles section-pad" id="principles" aria-labelledby="principles-title">
+        <header class="section-heading compact">
+          <p class="eyebrow"><span>05</span> The operating manual</p>
+          <h2 id="principles-title">Four rules.<br>No dependencies.</h2>
+        </header>
+
+        <div class="accordion">
+          <details open>
+            <summary><span>01</span><strong>Content is the interface</strong><i aria-hidden="true"></i></summary>
+            <div class="detail-body"><p>Begin with a readable, navigable document. Design should sharpen its meaning, never hold it hostage.</p><code>&lt;main&gt; meaning &lt;/main&gt;</code></div>
+          </details>
+          <details>
+            <summary><span>02</span><strong>Let the browser work</strong><i aria-hidden="true"></i></summary>
+            <div class="detail-body"><p>Use native controls, validation, focus, scrolling, and disclosure. They arrive tested across input modes you forgot existed.</p><code>details[open] { clarity: 1; }</code></div>
+          </details>
+          <details>
+            <summary><span>03</span><strong>Progress over parity</strong><i aria-hidden="true"></i></summary>
+            <div class="detail-body"><p>A solid baseline for everyone; richer expression where supported. The web was always designed to bend, not break.</p><code>@supports (wonder: true) { … }</code></div>
+          </details>
+          <details>
+            <summary><span>04</span><strong>Make every byte visible</strong><i aria-hidden="true"></i></summary>
+            <div class="detail-body"><p>Complexity should create value the visitor can feel. If it cannot, it is just architecture admiring itself.</p><code>dependency-count: 0;</code></div>
+          </details>
+        </div>
+      </section>
+
+      <section class="receipt section-pad" id="receipt" aria-labelledby="receipt-title">
+        <header class="section-heading compact">
+          <p class="eyebrow"><span>06</span> The performance receipt</p>
+          <h2 id="receipt-title">Every byte<br>accounted for.</h2>
+          <p>A transparent inventory of the complete runtime. No hidden chunks arrive after the document loads.</p>
+        </header>
+        <dl class="receipt-grid">
+          <div><dt>JavaScript</dt><dd>0 B</dd><small>Zero runtime</small></div>
+          <div><dt>Dependencies</dt><dd>0</dd><small>Zero supply chain</small></div>
+          <div><dt>External requests</dt><dd>0</dd><small>Everything is local</small></div>
+          <div><dt>Runtime source</dt><dd data-byte-receipt>77.9 kB</dd><small>HTML + CSS, uncompressed</small></div>
+        </dl>
+        <p class="receipt-note">Measured directly from the repository’s three HTML documents and stylesheet at release time.</p>
+      </section>
+
+      <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow light"><span>07</span> One last native trick</p>
+          <h2 id="contact-title">Send a signal.</h2>
+          <p>HTML validates this form all by itself. Try an incomplete address. The browser knows what to do.</p>
+        </div>
+        <form action="#sent">
+          <label for="email">Your email</label>
+          <div class="email-field">
+            <input id="email" name="email" type="email" placeholder="you@theopenweb.com" required autocomplete="email">
+            <button type="submit">Transmit <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-note">No tracking. No requests. This demo submits nowhere.</p>
+        </form>
+        <div class="sent-message" id="sent" role="status">
+          <strong>Signal received.</strong> The URL target and <code>:target</code> selector did that.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
+      <p>Designed in the browser.<br>Built from first principles.</p>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="museum.html">Museum</a><a href="principles.html">Field guide</a><a href="#top">Top ↑</a></nav>
+      <small>HTML + CSS / NOTHING ELSE</small>
+    </footer>
+  </div>
+</body>
+</html>

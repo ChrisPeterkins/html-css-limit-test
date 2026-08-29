@@ -1,0 +1,48 @@
+name: Native web quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Parse every HTML document
+        shell: python
+        run: |
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class StrictEnoughParser(HTMLParser):
+              pass
+
+          pages = sorted(Path(".").glob("*.html"))
+          if not pages:
+              raise SystemExit("No HTML documents found")
+
+          for page in pages:
+              parser = StrictEnoughParser()
+              parser.feed(page.read_text(encoding="utf-8"))
+              parser.close()
+              print(f"Parsed {page}")
+
+      - name: Enforce the runtime constraints
+        shell: bash
+        run: |
+          if find . -type f \( -name '*.js' -o -name '*.mjs' -o -name '*.cjs' -o -name 'package.json' \) -print -quit | grep -q .; then
+            echo 'JavaScript or a package manifest was found.'
+            exit 1
+          fi
+
+          if grep -RniE '<script|<img|<video|<audio|https?://' --include='*.html' --include='*.css' .; then
+            echo 'A prohibited runtime asset or external request was found.'
+            exit 1
+          fi
+
+          echo 'Zero-JavaScript, zero-dependency runtime verified.'

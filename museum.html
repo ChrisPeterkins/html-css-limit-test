@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive museum of modern HTML and CSS capabilities, built without JavaScript.">
+  <meta name="theme-color" content="#171713">
+  <title>The Capability Museum — NO SCRIPT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="museum-page">
+  <a class="skip-link" href="#museum-main">Skip to content</a>
+  <input class="theme-toggle" type="checkbox" id="theme-toggle" aria-label="Use dark theme" checked>
+
+  <div class="site-shell">
+    <div class="scroll-meter" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="No Script, home"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html#proof">Proof</a>
+        <a href="museum.html" aria-current="page">Museum</a>
+        <a href="principles.html">Field guide</a>
+      </nav>
+      <label class="theme-switch" for="theme-toggle"><span class="switch-track" aria-hidden="true"><span></span></span><span class="switch-label">Invert</span></label>
+    </header>
+
+    <main id="museum-main">
+      <section class="page-hero museum-hero" aria-labelledby="museum-title">
+        <div>
+          <p class="eyebrow light"><span>A</span> Six native exhibits</p>
+          <h1 id="museum-title">The browser<br>is the <em>framework.</em></h1>
+          <p class="lede">Open the drawers. Resize the rooms. Trigger the states. Then inspect the mechanism. Everything here is a browser primitive—not an imitation of one.</p>
+        </div>
+        <ol class="museum-directory" aria-label="Exhibit directory">
+          <li><a href="#has"><span>01</span> Relational state <code>:has()</code></a></li>
+          <li><a href="#popover"><span>02</span> Native overlay <code>popover</code></a></li>
+          <li><a href="#anchor"><span>03</span> Spatial logic <code>anchor()</code></a></li>
+          <li><a href="#container"><span>04</span> Intrinsic response <code>@container</code></a></li>
+          <li><a href="#controls"><span>05</span> Honest controls <code>input</code></a></li>
+          <li><a href="#counters"><span>06</span> Generated systems <code>counter()</code></a></li>
+        </ol>
+        <div class="hero-stamp" aria-hidden="true"><span>NO</span><span>RUNTIME</span><i>✦</i></div>
+      </section>
+
+      <section class="exhibit exhibit-has" id="has" aria-labelledby="has-title">
+        <header class="exhibit-copy">
+          <p class="eyebrow"><span>01</span> Relational state</p>
+          <h2 id="has-title">A parent that<br><em>pays attention.</em></h2>
+          <p>The card changes because it contains a checked input. CSS can now respond upward through the document tree.</p>
+          <details class="source-drawer">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>.has-stage:has(input:checked) {
+  --state: var(--acid);
+  border-radius: 50%;
+  rotate: 4deg;
+}</code></pre>
+          </details>
+        </header>
+        <div class="exhibit-stage has-stage">
+          <input type="checkbox" id="has-switch">
+          <label for="has-switch"><span>Change the parent</span><i aria-hidden="true"></i></label>
+          <div class="has-object"><span>STATE</span><strong>OFF</strong><strong>ON</strong></div>
+          <p>THE PARENT KNOWS</p>
+        </div>
+      </section>
+
+      <section class="exhibit exhibit-popover" id="popover" aria-labelledby="popover-title">
+        <header class="exhibit-copy">
+          <p class="eyebrow light"><span>02</span> Native overlay</p>
+          <h2 id="popover-title">An overlay with<br><em>no handler.</em></h2>
+          <p>Focus management, escape-to-close, top-layer placement, and an accessible relationship—all declared in HTML.</p>
+          <details class="source-drawer source-dark">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>&lt;button popovertarget="native-pop"&gt;
+  Open the top layer
+&lt;/button&gt;
+
+&lt;aside id="native-pop" popover&gt;…&lt;/aside&gt;</code></pre>
+          </details>
+        </header>
+        <div class="exhibit-stage popover-stage">
+          <div class="portal-rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <button class="portal-button" popovertarget="native-pop">Open the top layer <span aria-hidden="true">↗</span></button>
+          <aside class="native-popover" id="native-pop" popover>
+            <button class="popover-close" popovertarget="native-pop" popovertargetaction="hide" aria-label="Close overlay">×</button>
+            <span class="popover-kicker">NATIVE TOP LAYER</span>
+            <strong>No absolute-positioning<br>escape hatch required.</strong>
+            <p>Press <kbd>Esc</kbd>, click outside, or use the close control. The browser owns the behavior.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="exhibit exhibit-anchor" id="anchor" aria-labelledby="anchor-title">
+        <header class="exhibit-copy">
+          <p class="eyebrow"><span>03</span> Spatial logic</p>
+          <h2 id="anchor-title">Elements that<br><em>know where.</em></h2>
+          <p>The annotations are positioned relative to named anchors—not their containing box. Resize the page and the relationship survives.</p>
+          <details class="source-drawer">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>.planet { anchor-name: --planet; }
+.annotation {
+  position-anchor: --planet;
+  left: anchor(right);
+  top: anchor(center);
+}</code></pre>
+          </details>
+        </header>
+        <div class="exhibit-stage anchor-stage">
+          <div class="anchor-planet" aria-hidden="true"><i></i></div>
+          <span class="anchor-label">ANCHOR_01 <i></i></span>
+          <span class="anchor-coordinate">x: anchor(right)<br>y: anchor(center)</span>
+        </div>
+      </section>
+
+      <section class="exhibit exhibit-container" id="container" aria-labelledby="container-title">
+        <header class="exhibit-copy">
+          <p class="eyebrow light"><span>04</span> Intrinsic response</p>
+          <h2 id="container-title">Responsive to<br><em>context.</em></h2>
+          <p>Drag the room’s lower-right edge on desktop. The artifact responds to its container—not the viewport.</p>
+          <details class="source-drawer source-dark">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>.resize-room { container-type: inline-size; }
+
+@container (width &gt; 32rem) {
+  .specimen { grid-template-columns: 1fr 1fr; }
+}</code></pre>
+          </details>
+        </header>
+        <div class="exhibit-stage container-stage">
+          <div class="resize-room">
+            <article class="container-specimen">
+              <div class="specimen-art" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div><span>CONTAINER / 04</span><h3>Same component.<br>Different context.</h3><p>The layout, color, and type shift at the component’s own threshold.</p></div>
+            </article>
+          </div>
+          <small>RESIZE ↘</small>
+        </div>
+      </section>
+
+      <section class="exhibit exhibit-controls" id="controls" aria-labelledby="controls-title">
+        <header class="exhibit-copy">
+          <p class="eyebrow"><span>05</span> Honest controls</p>
+          <h2 id="controls-title">Inputs with<br><em>personality.</em></h2>
+          <p>Real form elements keep their keyboard behavior, focus semantics, and accessibility while participating fully in the art direction.</p>
+          <details class="source-drawer">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>input[type="range"] {
+  accent-color: var(--violet);
+}
+
+input:user-invalid { color: var(--orange); }</code></pre>
+          </details>
+        </header>
+        <form class="exhibit-stage controls-stage" action="#controls-complete">
+          <fieldset>
+            <legend>Transmission parameters</legend>
+            <label for="frequency">Frequency</label>
+            <input id="frequency" type="range" min="0" max="100" value="62">
+            <div class="range-scale" aria-hidden="true"><span>0</span><span>50</span><span>100</span></div>
+          </fieldset>
+          <fieldset class="choice-field">
+            <legend>Signal shape</legend>
+            <input type="radio" name="signal" id="sine" checked><label for="sine">Sine</label>
+            <input type="radio" name="signal" id="square"><label for="square">Square</label>
+            <input type="radio" name="signal" id="noise"><label for="noise">Noise</label>
+          </fieldset>
+          <label class="native-check" for="consent"><input id="consent" type="checkbox" required><span></span>I understand the browser is enough.</label>
+          <button class="button button-solid" type="submit">Validate natively <span aria-hidden="true">→</span></button>
+          <output id="controls-complete">VALID</output>
+        </form>
+      </section>
+
+      <section class="exhibit exhibit-counters" id="counters" aria-labelledby="counters-title">
+        <header class="exhibit-copy">
+          <p class="eyebrow light"><span>06</span> Generated systems</p>
+          <h2 id="counters-title">The document<br><em>keeps count.</em></h2>
+          <p>Nested numbering is generated from the document structure. Add, remove, or reorder an item and every label repairs itself.</p>
+          <details class="source-drawer source-dark">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>ol { counter-reset: chapter; }
+li { counter-increment: chapter; }
+li::before { content: counters(chapter, "."); }</code></pre>
+          </details>
+        </header>
+        <div class="exhibit-stage counter-stage">
+          <ol class="generated-list">
+            <li>Structure
+              <ol><li>Meaning</li><li>Order</li></ol>
+            </li>
+            <li>Presentation
+              <ol><li>Rhythm</li><li>Contrast</li><li>Motion</li></ol>
+            </li>
+            <li>Resilience</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="museum-exit section-pad">
+        <p class="eyebrow"><span>B</span> Continue reading</p>
+        <h2>The evidence is<br>in the <em>source.</em></h2>
+        <a class="button button-solid" href="principles.html">Open the field guide <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
+      <p>Six exhibits.<br>Zero event listeners.</p>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="principles.html">Field guide</a><a href="#museum-main">Top ↑</a></nav>
+      <small>HTML + CSS / NOTHING ELSE</small>
+    </footer>
+  </div>
+</body>
+</html>
