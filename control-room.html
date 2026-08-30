@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A CSS-only control room demonstrating feature queries, Boolean logic, typed custom properties, meters, and scroll snap.">
+  <meta name="theme-color" content="#171713">
+  <title>The Control Room — NO SCRIPT</title>
+  <link rel="stylesheet" href="styles.css?v=1.1.0">
+</head>
+<body class="control-page">
+  <a class="skip-link" href="#control-main">Skip to content</a>
+  <input class="theme-toggle" type="checkbox" id="theme-toggle" aria-label="Use dark theme" checked>
+
+  <div class="site-shell">
+    <div class="scroll-meter" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="wordmark" href="index.html" aria-label="No Script, home"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html#proof">Proof</a>
+        <a href="museum.html">Museum</a>
+        <a href="control-room.html" aria-current="page">Control room</a>
+        <a href="principles.html">Field guide</a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html">Home</a>
+          <a href="museum.html">Museum</a>
+          <a href="control-room.html" aria-current="page">Control room</a>
+          <a href="principles.html">Field guide</a>
+        </nav>
+      </details>
+      <label class="theme-switch" for="theme-toggle"><span class="switch-track" aria-hidden="true"><span></span></span><span class="switch-label">Invert</span></label>
+    </header>
+
+    <main id="control-main">
+      <section class="control-hero" aria-labelledby="control-title">
+        <div class="control-hero-copy">
+          <p class="eyebrow light"><span>C</span> Systems online</p>
+          <h1 id="control-title">No runtime.<br><em>Full control.</em></h1>
+          <p class="lede">A live instrument panel powered by document state, relational selectors, typed variables, feature queries, and native interaction models.</p>
+          <a class="button control-button" href="#logic">Route a signal <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="system-console" aria-label="Native system status">
+          <header><span>PLATFORM_STATUS</span><strong>ONLINE</strong></header>
+          <div class="console-radar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+          <dl>
+            <div><dt>Runtime</dt><dd>0 B</dd></div>
+            <div><dt>Main thread</dt><dd>Clear</dd></div>
+            <div><dt>Dependencies</dt><dd>None</dd></div>
+          </dl>
+          <label>Semantic integrity <meter min="0" max="100" value="100">100%</meter></label>
+          <label>Platform confidence <meter min="0" max="100" low="40" high="80" optimum="100" value="94">94%</meter></label>
+        </div>
+      </section>
+
+      <section class="support-section section-pad" aria-labelledby="support-title">
+        <header class="section-heading compact">
+          <p class="eyebrow"><span>01</span> Live capability scan</p>
+          <h2 id="support-title">CSS asks.<br>The browser <em>answers.</em></h2>
+          <p>These indicators are controlled by <code>@supports</code>. Their status is determined by the stylesheet evaluating the browser it is running inside.</p>
+        </header>
+        <div class="support-grid">
+          <article class="support-card support-has"><span>Selector logic</span><code>:has()</code><p class="support-yes">Available</p><p class="support-fallback">Fallback</p></article>
+          <article class="support-card support-container"><span>Intrinsic queries</span><code>@container</code><p class="support-yes">Available</p><p class="support-fallback">Fallback</p></article>
+          <article class="support-card support-anchor"><span>Spatial reference</span><code>anchor()</code><p class="support-yes">Available</p><p class="support-fallback">Fallback</p></article>
+          <article class="support-card support-timeline"><span>Scroll choreography</span><code>scroll()</code><p class="support-yes">Available</p><p class="support-fallback">Fallback</p></article>
+          <article class="support-card support-nesting"><span>Native nesting</span><code>&amp; selector</code><p class="support-yes">Available</p><p class="support-fallback">Fallback</p></article>
+          <article class="support-card support-color"><span>Color intelligence</span><code>color-mix()</code><p class="support-yes">Available</p><p class="support-fallback">Fallback</p></article>
+        </div>
+      </section>
+
+      <section class="logic-section section-pad" id="logic" aria-labelledby="logic-title">
+        <header class="logic-copy">
+          <p class="eyebrow light"><span>02</span> Boolean switchboard</p>
+          <h2 id="logic-title">Route the<br><em>signal.</em></h2>
+          <p>Toggle inputs A and B. Three logic gates recalculate from checkbox state using relational selectors. This is actual Boolean behavior expressed in CSS.</p>
+          <details class="source-drawer source-dark">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>.board:has(#a:checked):has(#b:checked) .and {
+  --output: 1;
+}
+
+.board:has(#a:checked):not(:has(#b:checked)) .xor {
+  --output: 1;
+}</code></pre>
+          </details>
+        </header>
+        <fieldset class="logic-board">
+          <legend>Boolean inputs and outputs</legend>
+          <input type="checkbox" id="logic-a"><label class="logic-input input-a" for="logic-a"><span>Input A</span><i><b>0</b><b>1</b></i></label>
+          <input type="checkbox" id="logic-b"><label class="logic-input input-b" for="logic-b"><span>Input B</span><i><b>0</b><b>1</b></i></label>
+          <div class="wire wire-a" aria-hidden="true"></div><div class="wire wire-b" aria-hidden="true"></div>
+          <div class="gate gate-and"><span>AND</span><output><b>0</b><b>1</b></output><small>A · B</small></div>
+          <div class="gate gate-or"><span>OR</span><output><b>0</b><b>1</b></output><small>A + B</small></div>
+          <div class="gate gate-xor"><span>XOR</span><output><b>0</b><b>1</b></output><small>A ⊕ B</small></div>
+          <p class="logic-caption">DOCUMENT STATE → RELATIONAL QUERY → OUTPUT</p>
+        </fieldset>
+      </section>
+
+      <section class="reactor-section section-pad" aria-labelledby="reactor-title">
+        <header class="reactor-copy">
+          <p class="eyebrow"><span>03</span> Typed custom property</p>
+          <h2 id="reactor-title">Animate the<br><em>value itself.</em></h2>
+          <p><code>@property</code> gives a CSS variable a type, initial value, and interpolation behavior. The browser can animate an angle directly through a generated gradient.</p>
+          <details class="source-drawer">
+            <summary>Reveal the mechanism <i aria-hidden="true"></i></summary>
+            <pre><code>@property --reactor-angle {
+  syntax: "&lt;angle&gt;";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes reactor { to { --reactor-angle: 360deg; } }</code></pre>
+          </details>
+        </header>
+        <fieldset class="reactor-panel">
+          <legend>Reactor controls</legend>
+          <input type="radio" name="reactor-speed" id="speed-slow" checked>
+          <input type="radio" name="reactor-speed" id="speed-fast">
+          <input type="checkbox" id="reactor-reverse">
+          <input type="checkbox" id="reactor-pause">
+          <div class="reactor-toolbar">
+            <div role="group" aria-label="Rotation speed"><label for="speed-slow">Slow</label><label for="speed-fast">Fast</label></div>
+            <div><label for="reactor-reverse">Reverse</label><label for="reactor-pause">Pause</label></div>
+          </div>
+          <div class="reactor-stage">
+            <div class="reactor-core" aria-hidden="true"><i></i><span>CSS</span></div>
+            <span class="reactor-readout">--reactor-angle<br>0deg → 360deg</span>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="protocol-section section-pad" aria-labelledby="protocol-title">
+        <header>
+          <p class="eyebrow light"><span>04</span> Scroll snap protocol</p>
+          <h2 id="protocol-title">One axis.<br><em>Four ideas.</em></h2>
+          <p>Scroll horizontally. Native snap points turn ordinary overflow into a deliberate, touch-friendly reading surface.</p>
+        </header>
+        <div class="protocol-track" tabindex="0" aria-label="Platform protocol cards">
+          <article><span>01 / STRUCTURE</span><strong>Meaning travels farther than implementation.</strong><p>Semantics survive redesigns, devices, tools, and time.</p></article>
+          <article><span>02 / STATE</span><strong>The document already knows things.</strong><p>Checked, open, valid, targeted, focused, and hovered are native state.</p></article>
+          <article><span>03 / CONTEXT</span><strong>Components can observe their surroundings.</strong><p>Containers let layout respond locally instead of guessing globally.</p></article>
+          <article><span>04 / PREFERENCE</span><strong>The visitor belongs in the system.</strong><p>Motion, contrast, color, input, and print preferences are part of design.</p></article>
+        </div>
+        <p class="swipe-note">SCROLL / SWIPE →</p>
+      </section>
+
+      <section class="control-exit section-pad">
+        <p class="eyebrow"><span>05</span> The system holds</p>
+        <h2>Complexity: visible.<br>Runtime: <em>absent.</em></h2>
+        <div><a class="button button-solid" href="museum.html">Return to the museum <span aria-hidden="true">←</span></a><a class="text-link" href="principles.html">Read the field guide →</a></div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
+      <p>State without stores.<br>Logic without listeners.</p>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="museum.html">Museum</a><a href="principles.html">Field guide</a><a href="#control-main">Top ↑</a></nav>
+      <small>HTML + CSS / NOTHING ELSE</small>
+    </footer>
+  </div>
+</body>
+</html>

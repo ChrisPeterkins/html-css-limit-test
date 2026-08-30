@@ -6,7 +6,7 @@
   <meta name="description" content="A practical field guide to building durable websites from native browser primitives.">
   <meta name="theme-color" content="#d6ff3f">
   <title>The Field Guide — NO SCRIPT</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=1.1.0">
 </head>
 <body class="guide-page">
   <a class="skip-link" href="#guide-main">Skip to content</a>
@@ -19,8 +19,18 @@
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="index.html#proof">Proof</a>
         <a href="museum.html">Museum</a>
+        <a href="control-room.html">Control room</a>
         <a href="principles.html" aria-current="page">Field guide</a>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html">Home</a>
+          <a href="museum.html">Museum</a>
+          <a href="control-room.html">Control room</a>
+          <a href="principles.html" aria-current="page">Field guide</a>
+        </nav>
+      </details>
       <label class="theme-switch" for="theme-toggle"><span class="switch-track" aria-hidden="true"><span></span></span><span class="switch-label">Invert</span></label>
     </header>
 
@@ -30,6 +40,28 @@
         <h1 id="guide-title">Begin with<br>what <em>survives.</em></h1>
         <p class="lede">A practical operating manual for building less software and more web: portable, inspectable, accessible, and difficult to break.</p>
         <dl class="guide-meta"><div><dt>Edition</dt><dd>01 / 2026</dd></div><div><dt>Format</dt><dd>Open document</dd></div><div><dt>License</dt><dd>MIT</dd></div></dl>
+      </section>
+
+      <section class="reader-controls" aria-labelledby="reader-title">
+        <div>
+          <span class="reader-kicker">Reader controls</span>
+          <h2 id="reader-title">Make the document yours.</h2>
+        </div>
+        <fieldset>
+          <legend>Typeface</legend>
+          <input type="radio" name="reader-type" id="type-sans" checked><label for="type-sans">Sans</label>
+          <input type="radio" name="reader-type" id="type-serif"><label for="type-serif">Serif</label>
+        </fieldset>
+        <fieldset>
+          <legend>Text size</legend>
+          <input type="radio" name="reader-size" id="size-standard" checked><label for="size-standard">Standard</label>
+          <input type="radio" name="reader-size" id="size-large"><label for="size-large">Large</label>
+        </fieldset>
+        <fieldset>
+          <legend>Measure</legend>
+          <input type="radio" name="reader-measure" id="measure-focused" checked><label for="measure-focused">Focused</label>
+          <input type="radio" name="reader-measure" id="measure-wide"><label for="measure-wide">Wide</label>
+        </fieldset>
       </section>
 
       <article class="field-guide">
@@ -115,7 +147,7 @@
     <footer>
       <a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
       <p>A document should<br>outlive its tooling.</p>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="museum.html">Museum</a><a href="#guide-main">Top ↑</a></nav>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="museum.html">Museum</a><a href="control-room.html">Control room</a><a href="#guide-main">Top ↑</a></nav>
       <small>HTML + CSS / NOTHING ELSE</small>
     </footer>
   </div>

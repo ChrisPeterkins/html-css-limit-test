@@ -2,12 +2,13 @@
 
 An interactive exhibition built to test how far the modern web platform can go without JavaScript, packages, frameworks, image assets, web fonts, build tools, or external requests.
 
-The project is both an argument and its evidence: three semantic HTML documents, one stylesheet, and zero runtime dependencies.
+The project is both an argument and its evidence: four semantic HTML documents, one stylesheet, and zero runtime dependencies.
 
 ## Explore
 
 - `index.html` — the thesis, performance receipt, and 36-state CSS composition laboratory
 - `museum.html` — six inspectable browser-native capability exhibits
+- `control-room.html` — live feature detection, Boolean logic, typed variables, meters, and scroll snap
 - `principles.html` — an editorial field guide with a dedicated print edition
 - `styles.css` — the complete visual and interaction system
 
@@ -23,6 +24,10 @@ The project is both an argument and its evidence: three semantic HTML documents,
 | Cross-document view transitions | Navigation between all three pages |
 | Native form validation | Homepage transmission form and museum controls |
 | Radio/checkbox state machines | 36-state composition laboratory |
+| CSS Boolean logic | Control-room AND, OR, and XOR switchboard |
+| Typed custom properties | Animated control-room conic reactor |
+| Live CSS feature queries | Control-room capability scan |
+| Native meters and scroll snap | Control-room status console and protocol deck |
 | CSS counters | Automatically numbered nested museum system |
 | Generated artwork | Every illustration and texture across the site |
 | User preference queries | Reduced motion, increased contrast, and print |
@@ -52,7 +57,7 @@ Repository documentation and CI configuration are not runtime assets. The GitHub
 
 ## Accessibility
 
-The documents use landmarks, heading hierarchy, skip links, real links and buttons, labelled fieldsets, keyboard-visible focus, native validation and disclosure, reduced-motion handling, increased-contrast handling, and a print-specific reading format.
+The documents use landmarks, heading hierarchy, skip links, real links and buttons, a CSS-only mobile menu, labelled fieldsets, keyboard-visible focus, native validation and disclosure, reduced-motion handling, increased-contrast handling, reader-controlled typography, and a print-specific reading format.
 
 Modern capabilities are progressively enhanced. The content and basic controls remain available when an experimental visual feature is unsupported.
 

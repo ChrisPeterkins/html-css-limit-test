@@ -6,7 +6,7 @@
   <meta name="description" content="An interactive museum of modern HTML and CSS capabilities, built without JavaScript.">
   <meta name="theme-color" content="#171713">
   <title>The Capability Museum — NO SCRIPT</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=1.1.0">
 </head>
 <body class="museum-page">
   <a class="skip-link" href="#museum-main">Skip to content</a>
@@ -19,8 +19,18 @@
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="index.html#proof">Proof</a>
         <a href="museum.html" aria-current="page">Museum</a>
+        <a href="control-room.html">Control room</a>
         <a href="principles.html">Field guide</a>
       </nav>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html">Home</a>
+          <a href="museum.html" aria-current="page">Museum</a>
+          <a href="control-room.html">Control room</a>
+          <a href="principles.html">Field guide</a>
+        </nav>
+      </details>
       <label class="theme-switch" for="theme-toggle"><span class="switch-track" aria-hidden="true"><span></span></span><span class="switch-label">Invert</span></label>
     </header>
 
@@ -205,7 +215,7 @@ li::before { content: counters(chapter, "."); }</code></pre>
     <footer>
       <a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
       <p>Six exhibits.<br>Zero event listeners.</p>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="principles.html">Field guide</a><a href="#museum-main">Top ↑</a></nav>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="index.html">Home</a><a href="control-room.html">Control room</a><a href="principles.html">Field guide</a><a href="#museum-main">Top ↑</a></nav>
       <small>HTML + CSS / NOTHING ELSE</small>
     </footer>
   </div>

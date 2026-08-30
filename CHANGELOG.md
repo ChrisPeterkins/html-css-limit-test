@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## 1.1.0 — 2026-08-29
+
+- Added the CSS-only Control Room with live feature-query indicators.
+- Added an interactive AND, OR, and XOR Boolean switchboard using `:has()`.
+- Added a typed custom-property reactor with speed, direction, and pause controls.
+- Added native status meters and a keyboard-focusable scroll-snap protocol deck.
+- Added eight reader-controlled typography configurations to the field guide.
+- Added a fully navigable CSS-only mobile menu across every page.
+- Expanded responsive and keyboard-focus coverage for the new controls.
+
 ## 1.0.0 — 2026-08-29
 
 - Launched the three-page HTML and CSS exhibition.

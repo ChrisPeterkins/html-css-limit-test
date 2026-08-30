@@ -6,7 +6,7 @@
   <meta name="description" content="A deliberately ambitious website made with nothing but semantic HTML and CSS.">
   <meta name="theme-color" content="#f1efe7">
   <title>NO SCRIPT — The web, before the noise.</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=1.1.0">
 </head>
 <body>
   <a class="skip-link" href="#top">Skip to content</a>
@@ -24,8 +24,19 @@
       <nav class="primary-nav" aria-label="Primary navigation">
         <a href="index.html#proof" aria-current="page">Proof</a>
         <a href="museum.html">Museum</a>
+        <a href="control-room.html">Control room</a>
         <a href="principles.html">Field guide</a>
       </nav>
+
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <nav aria-label="Mobile navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="museum.html">Museum</a>
+          <a href="control-room.html">Control room</a>
+          <a href="principles.html">Field guide</a>
+        </nav>
+      </details>
 
       <label class="theme-switch" for="theme-toggle">
         <span class="switch-track" aria-hidden="true"><span></span></span>
@@ -90,10 +101,10 @@
           </article>
           <article class="stat-card">
             <span class="card-number">02</span>
-            <div class="stat-value">4<small>files</small></div>
+            <div class="stat-value">5<small>files</small></div>
             <h3>The whole system</h3>
-            <p>Three meaningful documents. One expressive stylesheet. View source and understand the entire architecture.</p>
-            <div class="file-stack" aria-hidden="true"><span>3 × HTML</span><span>1 × CSS</span></div>
+            <p>Four meaningful documents. One expressive stylesheet. View source and understand the entire architecture.</p>
+            <div class="file-stack" aria-hidden="true"><span>4 × HTML</span><span>1 × CSS</span></div>
           </article>
           <article class="stat-card">
             <span class="card-number">03</span>
@@ -209,9 +220,9 @@
           <div><dt>JavaScript</dt><dd>0 B</dd><small>Zero runtime</small></div>
           <div><dt>Dependencies</dt><dd>0</dd><small>Zero supply chain</small></div>
           <div><dt>External requests</dt><dd>0</dd><small>Everything is local</small></div>
-          <div><dt>Runtime source</dt><dd data-byte-receipt>77.9 kB</dd><small>HTML + CSS, uncompressed</small></div>
+          <div><dt>Runtime source</dt><dd data-byte-receipt>107.5 kB</dd><small>HTML + CSS, uncompressed</small></div>
         </dl>
-        <p class="receipt-note">Measured directly from the repository’s three HTML documents and stylesheet at release time.</p>
+        <p class="receipt-note">Measured directly from the repository’s four HTML documents and stylesheet at release time.</p>
       </section>
 
       <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
@@ -237,7 +248,7 @@
     <footer>
       <a class="wordmark footer-mark" href="index.html"><span class="wordmark-mark" aria-hidden="true">&lt;/&gt;</span><span>NO SCRIPT</span></a>
       <p>Designed in the browser.<br>Built from first principles.</p>
-      <nav class="footer-nav" aria-label="Footer navigation"><a href="museum.html">Museum</a><a href="principles.html">Field guide</a><a href="#top">Top ↑</a></nav>
+      <nav class="footer-nav" aria-label="Footer navigation"><a href="museum.html">Museum</a><a href="control-room.html">Control room</a><a href="principles.html">Field guide</a><a href="#top">Top ↑</a></nav>
       <small>HTML + CSS / NOTHING ELSE</small>
     </footer>
   </div>
