@@ -2,13 +2,14 @@
 
 An interactive exhibition built to test how far the modern web platform can go without JavaScript, packages, frameworks, image assets, web fonts, build tools, or external requests.
 
-The project is both an argument and its evidence: four semantic HTML documents, one stylesheet, and zero runtime dependencies.
+The project is both an argument and its evidence: five semantic HTML documents, one stylesheet, and zero runtime dependencies.
 
 ## Explore
 
 - `index.html` — the thesis, performance receipt, and 36-state CSS composition laboratory
 - `museum.html` — six inspectable browser-native capability exhibits
 - `control-room.html` — live feature detection, Boolean logic, typed variables, meters, and scroll snap
+- `engine.html` — a playable CSS machine, exact-state puzzle, 3D inspector, X-ray view, and 144-state poster forge
 - `principles.html` — an editorial field guide with a dedicated print edition
 - `styles.css` — the complete visual and interaction system
 
@@ -21,13 +22,18 @@ The project is both an argument and its evidence: four semantic HTML documents, 
 | CSS anchor positioning | Museum spatial-logic exhibit |
 | Container queries and units | Resizable museum specimen and composition typography |
 | Scroll-driven animation | Reading progress and exhibit entrances |
-| Cross-document view transitions | Navigation between all three pages |
+| Cross-document view transitions | Navigation across the exhibition and the Control Room-to-Engine core morph |
 | Native form validation | Homepage transmission form and museum controls |
 | Radio/checkbox state machines | 36-state composition laboratory |
 | CSS Boolean logic | Control-room AND, OR, and XOR switchboard |
 | Typed custom properties | Animated control-room conic reactor |
 | Live CSS feature queries | Control-room capability scan |
 | Native meters and scroll snap | Control-room status console and protocol deck |
+| Exact-state CSS puzzle | Cascade Engine three-relay vault using `:has()`, `:checked`, and `:not()` |
+| CSS 3D transforms | Six-faced inspection model with three stateful viewpoints |
+| Scroll-built composition | Cascade Engine components assembled on a named view timeline |
+| Document X-ray mode | Live semantic structure labels generated from data attributes |
+| Generative design system | 144-state poster forge with a print-to-paper output mode |
 | CSS counters | Automatically numbered nested museum system |
 | Generated artwork | Every illustration and texture across the site |
 | User preference queries | Reduced motion, increased contrast, and print |
@@ -57,7 +63,7 @@ Repository documentation and CI configuration are not runtime assets. The GitHub
 
 ## Accessibility
 
-The documents use landmarks, heading hierarchy, skip links, real links and buttons, a CSS-only mobile menu, labelled fieldsets, keyboard-visible focus, native validation and disclosure, reduced-motion handling, increased-contrast handling, reader-controlled typography, and a print-specific reading format.
+The documents use landmarks, heading hierarchy, skip links, real links and buttons, a CSS-only mobile menu, labelled fieldsets, keyboard-visible focus, native validation and disclosure, reduced-motion handling, increased-contrast handling, reader-controlled typography, and print-specific reading and poster formats.
 
 Modern capabilities are progressively enhanced. The content and basic controls remain available when an experimental visual feature is unsupported.
 

@@ -19,18 +19,41 @@ jobs:
           from html.parser import HTMLParser
           from pathlib import Path
 
-          class StrictEnoughParser(HTMLParser):
-              pass
+          class SiteParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = []
+                  self.links = []
+
+              def handle_starttag(self, tag, attrs):
+                  attributes = dict(attrs)
+                  if "id" in attributes:
+                      self.ids.append(attributes["id"])
+                  if "href" in attributes:
+                      self.links.append(attributes["href"])
 
           pages = sorted(Path(".").glob("*.html"))
           if not pages:
               raise SystemExit("No HTML documents found")
 
           for page in pages:
-              parser = StrictEnoughParser()
+              parser = SiteParser()
               parser.feed(page.read_text(encoding="utf-8"))
               parser.close()
+              if len(parser.ids) != len(set(parser.ids)):
+                  raise SystemExit(f"Duplicate ID in {page}")
+              for link in parser.links:
+                  if link.startswith(("#", "mailto:", "https://", "http://")):
+                      continue
+                  target = Path(link.split("#", 1)[0].split("?", 1)[0])
+                  if not target.exists():
+                      raise SystemExit(f"Broken local link in {page}: {link}")
               print(f"Parsed {page}")
+
+          css = Path("styles.css").read_text(encoding="utf-8")
+          if css.count("{") != css.count("}"):
+              raise SystemExit("Unbalanced stylesheet braces")
+          print("Stylesheet braces balanced")
 
       - name: Enforce the runtime constraints
         shell: bash
@@ -40,7 +63,7 @@ jobs:
             exit 1
           fi
 
-          if grep -RniE '<script|<img|<video|<audio|https?://' --include='*.html' --include='*.css' .; then
+          if grep -RniE '<script|<img|<svg|<video|<audio|@import|https?://|url\([^)]*data:' --include='*.html' --include='*.css' .; then
             echo 'A prohibited runtime asset or external request was found.'
             exit 1
           fi
